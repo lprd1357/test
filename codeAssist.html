@@ -40,7 +40,7 @@ return p1.toUpperCase();
 }
 
 // 카멜형식 (첫글자 소문자)
-function toCamel Case(str, str2) {
+function toCamelCase(str, str2) {
 let result = "";
 const t1Arr = str.split("\n");
 const t2Arr = str2.split("\n");
@@ -48,19 +48,19 @@ const maxLength = Math.max(...t1Arr.map(el => el.length)); //배열값중 최대
 const spArr = t1Arr.map(el => " ".repeat(maxLength - el. length + 1));
 /*
 t1Arr.forEach(function(val, index){
-result += fgl.value.replace(/#vo#/9, toCamel Casel(val)).replace(/#Vo#/9, toCamel Case2(val)).replace(/#VO#/g, val) + "#n";
+result += fgl.value.replace(/#vo#/9, toCamelCasel(val)).replace(/#Vo#/9, toCamelCase2(val)).replace(/#VO#/g, val) + "#n";
 });
 */
 for(let i=0; i<t1Arr.length; i++) {
 if(t1Arr[i] == "") continue;
-result += fg1.value.replace(/#vo#/g, toCamelCasel(t1 Arr[i])).replace(/#Vo#/g, toCamel Case2(t1Arr[i]))
+result += fg1.value.replace(/#vo#/g, toCamelCasel(t1 Arr[i])).replace(/#Vo#/g, toCamelCase2(t1Arr[i]))
 .replace(/#VO#/g, t1Arr[i]).replace(/#SP#/g, spArr[i])
 .replace(/#CMT#/g, (t2Arr.length> 0 && t2Arr[i] != null ? t2Arr[i] : "")) + "\n";
 return result;
 }
 
 function b1_click() {
-t3.value=toCamel Case(t1.value, t2.value);
+t3.value=toCamelCase(t1.value, t2.value);
 //copyToClipboard(t3.value);
 }
 /*
