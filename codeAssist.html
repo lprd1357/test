@@ -1,0 +1,83 @@
+<html lang="ko" xml:lang="ko" >
+<head>
+<meta http-equiv=Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<textarea id="t1" style="height: 400px; width: 200">
+ABC EFG HK
+DEF AAA_CCC
+</textarea>
+<textarea id="t2" style="height:400px; width: 200">
+에이
+디
+</textarea>
+=>>
+<textarea id="t3" style="height: 400px; width: 400">
+</textarea> <br>
+#vo# #Vo# #V0# #SP# #CMT# <br>
+<input type="text" id="fg1" style="width: 300px;">
+<select id="fg3" style="width: 300px;" onchange="fg1.value=fg3.value">
+<option value="private String #vo#; #SP#//#CMT#">private String #vo#: #SP#//#CMT#</option>
+<option value="#{#vo#) #SP#AS #VO#; #SP#/*#CMT#+/">#{ #vo#) #SP#AS #VO#: #SP#/*#CMT#*/</option>
+<option value=",T.#VO##SP#= S. #VO##SP#/*#CMT#*/">, T.#VO##SP#= S.#VO##SP#/*#CMT#*/</option>
+<option value="#VO#">#VO#</option>
+</select>
+<input type="button" id="b1" onclick="b1_click()" value="변환">
+<script>
+fg1.value=fg3.value;
+// 카멜형식 (첫글자 소문자)
+function toCamelCase1(str) {
+return str.toLowerCase().replace(/[_-] ([a-zA-Z])/g, function(match, p1) {
+return p1.toUpperCase();
+});
+}
+
+// 카멜형식 (첫글자대문자)
+function to CamelCase2(str) {
+ return ("-"+str.toLowerCase()).replace(/\n/g, "\n-").replace(/[_-] ([a-zA-Z])/g, function(match, p1) {
+return p1.toUpperCase();
+});
+}
+
+// 카멜형식 (첫글자 소문자)
+function to Camel Case(str, str2) {
+let result = "";
+const t1Arr = str.split("\n");
+const t2Arr = str2.split("\n");
+const maxLength = Math.max(...t1Arr.map(el => el.length)); //배열값중 최대값
+const spArr = t1Arr.map(el => " ".repeat(maxLength - el. length + 1));
+/*
+t1Arr.forEach(function(val, index){
+result += fgl.value.replace(/#vo#/9, toCamel Casel(val)).replace(/#Vo#/9, toCamel Case2(val)).replace(/#VO#/g, val) + "#n";
+});
+*/
+for(let i=0; i<t1Arr.length; i++) {
+if(t1Arr[i] == "") continue;
+result += fg1.value.replace(/#vo#/g, toCamelCasel(t1 Arr[i])).replace(/#Vo#/g, toCamel Case2(t1Arr[i]))
+.replace(/#VO#/g, t1Arr[i]).replace(/#SP#/g, spArr[i])
+.replace(/#CMT#/g, (t2Arr.length> 0 && t2Arr[i] != null ? t2Arr[i] : "")) + "\n";
+return result;
+}
+
+function b1_click() {
+t3.value=toCamel Case(t1.value, t2.value);
+//copyToClipboard(t3.value);
+}
+/*
+copyToClipboard = function(text) {
+const textarea = document.createElement("textarea");
+textarea.value = text:
+document.body.appendChild(textarea);
+textarea.select();
+case();
+document.execCommand("copy");
+document.body.removeChild(textarea);
+}
+*/
+</script>
+</body>
+</html>
+
+
+
+
