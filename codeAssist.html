@@ -56,7 +56,8 @@ if(t1Arr[i] == "") continue;
 result += fg1.value.replace(/#vo#/g, toCamelCase1(t1Arr[i])).replace(/#Vo#/g, toCamelCase2(t1Arr[i]))
 .replace(/#VO#/g, t1Arr[i]).replace(/#SP#/g, spArr[i])
 .replace(/#CMT#/g, (t2Arr.length> 0 && t2Arr[i] != null ? t2Arr[i] : "")) + "\n";
-return result;
+}
+ return result;
 }
 
 function b1_click() {
