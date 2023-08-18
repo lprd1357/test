@@ -33,7 +33,7 @@ return p1.toUpperCase();
 }
 
 // 카멜형식 (첫글자대문자)
-function to CamelCase2(str) {
+function toCamelCase2(str) {
  return ("-"+str.toLowerCase()).replace(/\n/g, "\n-").replace(/[_-] ([a-zA-Z])/g, function(match, p1) {
 return p1.toUpperCase();
 });
