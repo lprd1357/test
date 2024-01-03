@@ -55,9 +55,10 @@ function tool_pencil() {
 
     // 마우스를 누르는 순간 그리기 작업을 시작 한다. 
     this.touchstart = function (ev) {
-	context.beginPath();
-	context.moveTo(ev._x, ev._y);
-	tool.started = true;
+        ev.preventDefault();
+        context.beginPath();
+        context.moveTo(ev._x, ev._y);
+        tool.started = true;
     };
     // 마우스가 이동하는 동안 계속 호출하여 Canvas에 Line을 그려 나간다
     this.touchmove = function (ev) {
