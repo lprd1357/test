@@ -71,16 +71,16 @@
             e.preventDefault();
             isDrawing = true;
             const { x, y } = getTouchPos(e);
-            startX = x;
-            startY = y;
+            lastX = x;
+            lastY = y;
         }
 
         function touchMove(e) {
             if(!isDrawing) return;
             const { x, y } = getTouchPos(e);
             draw(x, y);
-            startX = x;
-            startY = y;
+            lastX = x;
+            lastY = y;
         }
 
         function touchEnd(e) {
