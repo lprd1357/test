@@ -62,8 +62,8 @@
 
         function getTouchPos(e) {
             return {
-                x: e.touches[0].clientX - e.target.offsetLeft,
-                y: e.touches[0].clientY - e.target.offsetTop + document.documentElement.scrollTop
+                x: e.touches[0].clientX - e.canvas.offsetLeft,
+                y: e.touches[0].clientY - e.canvas.offsetTop + document.documentElement.scrollTop
             }
         }
 
@@ -88,7 +88,7 @@
             // 점을 찍을 경우 위해 마지막에 점을 찍는다.
             // touchEnd 이벤트의 경우 위치정보가 없어서 startX, startY를 가져와서 점을 찍는다.
             ctx.beginPath();
-            ctx.arc(startX, startY, ctx.lineWidth/2, 0, 2*Math.PI);
+            ctx.arc(lastX, lastY, ctx.lineWidth/2, 0, 2*Math.PI);
             ctx.fillStyle = ctx.strokeStyle;
             ctx.fill();
             isDrawing = false;
